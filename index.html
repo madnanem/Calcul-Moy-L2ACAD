@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator L3</title>
+    <link rel="stylesheet" href="style.css">
+        </head>
+    <body>
+    
+      <h2>Grade Calculator L2 ACAD </h2>
+      
+      <h3> S3: </h3>
+      <!-- First Table -->
+      <table id="gradesTable1">
+        <tr>
+          <th>Module</th>
+          <th>Interro</th>
+          <th>Examen</th>
+          <th>TP</th>
+          <th>Ceoff</th>
+          <th>MOY</th>
+        </tr>
+        <tr>
+          <td>Algo</td>
+          <td><input type="number" id="interroAlgo"></td>
+          <td><input type="number" id="examenAlgo"></td>
+          <td><input type="number" id="tpAlgo"></td>
+          <td id="ceoff3">3</td>
+          <td id="moyAlgo">-</td>
+        </tr>
+        <tr>
+          <td>Archi</td>
+          <td><input type="number" id="interroArchi"></td>
+          <td><input type="number" id="examenArchi"></td>
+          <td></td>
+          <td id="ceoff3">3</td>
+          <td id="moyArchi">-</td>
+        </tr>
+        <tr>
+          <td>Si</td>
+          <td><input type="number" id="interroSi"></td>
+          <td><input type="number" id="examenSi"></td>
+          <td></td>
+          <td id="ceoff3">3</td>
+          <td id="moySi">-</td>
+        </tr>
+        <tr>
+          <td>Mi</td>
+          <td><input type="number" id="interroMi"></td>
+          <td><input type="number" id="examenMi"></td>
+          <td></td>
+          <td id="ceoff3">3</td>
+          <td id="moyMi">-</td>
+        </tr>
+        <tr>
+          <td>Proba</td>
+          <td><input type="number" id="interroProba"></td>
+          <td><input type="number" id="examenProba"></td>
+          <td></td>
+          <td>3</td>
+          <td id="moyProba">-</td>
+          
+        </tr>
+        <tr>
+          <td>Logique</td>
+          <td><input type="number" id="interroLogique"></td>
+          <td><input type="number" id="examenLogique"></td>
+          <td></td>
+          <td id="ceoff3">3</td>
+          <td id="moyLogique">-</td>
+        </tr>
+        <tr>
+          <td>ENG</td>
+          <td></td>
+          <td><input type="number" id="examenENG"></td>
+          <td></td>
+          <td id="ceoff2">2</td>
+          <td id="moyENG">-</td>
+        </tr>
+      </table>
+
+      <!-- Calculate Button for First Table -->
+      <button onclick="calculateAverages(1)">Calculate AVRG S3 :</button>
+
+      <h3 id="finalResult"></h3>
+  
+    
+      <br>
+      
+
+
+
+
+
+
+
+
+
+
+      
+      <h3 style="color: red;"> S4: ( doesn't work currently ) </h3>
+
+      <!-- Second Table -->
+      <table id="gradesTable2">
+        <tr>
+          <th>Module</th>
+          <th>Interro</th>
+          <th>Examen</th>
+          <th>TP</th>
+          <th>Ceoff</th>
+          <th>MOY</th>
+        </tr>
+        <tr>
+          <td>BDD</td> 
+          <td><input type="number" id="interroBDD"></td>
+          <td><input type="number" id="examenBDD"></td>
+          <td><input type="number" id="tpBDD"></td>
+          <td id="ceoff3">3</td>
+          <td id="moyBDD">-</td>
+        </tr>
+        <tr>
+          <td>Archi2</td> 
+          <td><input type="number" id="interroArchi2"></td>
+          <td><input type="number" id="examenArchi2"></td>
+          <td><input type="number" id="tpArchi2"></td>
+          <td id="ceoff3">3</td>
+          <td id="moyArchi2">-</td>
+        </tr>
+        <tr>
+          <td>SE</td> 
+          <td><input type="number" id="interroSE"></td>
+          <td><input type="number" id="examenSE"></td>
+          <td><input type="number" id="tpSE"></td>
+          <td id="ceoff3">3</td>
+          <td id="moySE">-</td>
+        </tr>
+        <tr>
+          <td>POO</td> 
+          <td><input type="number" id="interroPOO"></td>
+          <td><input type="number" id="examenPOO"></td>
+          <td><input type="number" id="tpPOO"></td>
+          <td id="ceoff3">3</td>
+          <td id="moyPOO">-</td>
+        </tr>
+        <tr>
+          <td>THL</td> 
+          <td><input type="number" id="interroTHL"></td>
+          <td><input type="number" id="examenTHL"></td>
+          <td></td>
+          <td id="ceoff3">3</td>
+          <td id="moyTHL">-</td>
+        </tr>
+        <tr>
+          <td>Python</td> 
+          <td></td>
+          <td><input type="number" id="examenPython"></td>
+          <td></td>
+          <td id="ceoff2">2</td>
+          <td id="moyPython">-</td>
+        </tr>
+        <tr>
+          <td>ENG2</td>
+          <td></td>
+          <td><input type="number" id="examenENG2"></td>
+          <td></td>
+          <td id="ceoff2">2</td>
+          <td id="moyENG2">-</td>
+        </tr>
+      </table>
+    
+    
+      <!-- Calculate Button for Second Table -->
+
+      <button onclick="">Calculate AVRG S4 :</button>
+
+      <br><br>
+
+
+      <script src="/App.js"></script>
+      
+
+    
+    </body>
+    </html>
+    
