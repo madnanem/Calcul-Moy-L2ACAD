@@ -1,273 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade Calculator L3</title>
-    <link rel="stylesheet" href="style.css">
-        </head>
-    <body>
-    
-      <h2>Grade Calculator L2 ACAD </h2>
-      
-      <h3> S3: </h3>
-      <!-- First Table -->
-      <table id="gradesTable1">
-        <tr>
-          <th>Module</th>
-          <th>Interro</th>
-          <th>Examen</th>
-          <th>TP</th>
-          <th>Ceoff</th>
-          <th>MOY</th>
-        </tr>
-        <tr>
-          <td>Algo</td>
-          <td><input type="number" id="interroAlgo"></td>
-          <td><input type="number" id="examenAlgo"></td>
-          <td><input type="number" id="tpAlgo"></td>
-          <td id="ceoff3">3</td>
-          <td id="moyAlgo">-</td>
-        </tr>
-        <tr>
-          <td>Archi</td>
-          <td><input type="number" id="interroArchi"></td>
-          <td><input type="number" id="examenArchi"></td>
-          <td></td>
-          <td id="ceoff3">3</td>
-          <td id="moyArchi">-</td>
-        </tr>
-        <tr>
-          <td>Si</td>
-          <td><input type="number" id="interroSi"></td>
-          <td><input type="number" id="examenSi"></td>
-          <td></td>
-          <td id="ceoff3">3</td>
-          <td id="moySi">-</td>
-        </tr>
-        <tr>
-          <td>Mi</td>
-          <td><input type="number" id="interroMi"></td>
-          <td><input type="number" id="examenMi"></td>
-          <td></td>
-          <td id="ceoff3">3</td>
-          <td id="moyMi">-</td>
-        </tr>
-        <tr>
-          <td>Proba</td>
-          <td><input type="number" id="interroProba"></td>
-          <td><input type="number" id="examenProba"></td>
-          <td></td>
-          <td>3</td>
-          <td id="moyProba">-</td>
-          
-        </tr>
-        <tr>
-          <td>Logique</td>
-          <td><input type="number" id="interroLogique"></td>
-          <td><input type="number" id="examenLogique"></td>
-          <td></td>
-          <td id="ceoff3">3</td>
-          <td id="moyLogique">-</td>
-        </tr>
-        <tr>
-          <td>ENG</td>
-          <td></td>
-          <td><input type="number" id="examenENG"></td>
-          <td></td>
-          <td id="ceoff2">2</td>
-          <td id="moyENG">-</td>
-        </tr>
-      </table>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade Calculator L3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Grade Calculator L2 ACAD</h2>
 
-      <!-- Calculate Button for First Table -->
-      <button onclick="calculateAverages(1)">Calculate AVRG S3 :</button>
+  <h3>S3:</h3>
+  <table id="gradesTable1">
+    <tr>
+      <th>Module</th><th>Interro</th><th>Examen</th><th>TP</th><th>Coeff</th><th>MOY</th>
+    </tr>
+    <tr><td>Algo</td><td><input type="number" id="interroAlgo"></td><td><input type="number" id="examenAlgo"></td><td><input type="number" id="tpAlgo"></td><td>3</td><td id="moyAlgo">-</td></tr>
+    <tr><td>Archi</td><td><input type="number" id="interroArchi"></td><td><input type="number" id="examenArchi"></td><td></td><td>3</td><td id="moyArchi">-</td></tr>
+    <tr><td>Si</td><td><input type="number" id="interroSi"></td><td><input type="number" id="examenSi"></td><td></td><td>3</td><td id="moySi">-</td></tr>
+    <tr><td>Mi</td><td><input type="number" id="interroMi"></td><td><input type="number" id="examenMi"></td><td></td><td>3</td><td id="moyMi">-</td></tr>
+    <tr><td>Proba</td><td><input type="number" id="interroProba"></td><td><input type="number" id="examenProba"></td><td></td><td>3</td><td id="moyProba">-</td></tr>
+    <tr><td>Logique</td><td><input type="number" id="interroLogique"></td><td><input type="number" id="examenLogique"></td><td></td><td>3</td><td id="moyLogique">-</td></tr>
+    <tr><td>ENG</td><td></td><td><input type="number" id="examenENG"></td><td></td><td>2</td><td id="moyENG">-</td></tr>
+  </table>
+  <button onclick="calculateAverages(1)">Calculate AVRG S3</button>
+  <h3 id="finalResult1" class="result"></h3>
 
-      <h3 id="finalResult"></h3>
-  
-    
-      <br>
-      
+  <h3 style="color: red;">S4:</h3>
+  <table id="gradesTable2">
+    <tr>
+      <th>Module</th><th>Interro</th><th>Examen</th><th>TP</th><th>Coeff</th><th>MOY</th>
+    </tr>
+    <tr><td>BDD</td><td><input type="number" id="interroBDD"></td><td><input type="number" id="examenBDD"></td><td><input type="number" id="tpBDD"></td><td>3</td><td id="moyBDD">-</td></tr>
+    <tr><td>Archi2</td><td><input type="number" id="interroArchi2"></td><td><input type="number" id="examenArchi2"></td><td></td><td>3</td><td id="moyArchi2">-</td></tr>
+    <tr><td>SE</td><td><input type="number" id="interroSE"></td><td><input type="number" id="examenSE"></td><td><input type="number" id="tpSE"></td><td>3</td><td id="moySE">-</td></tr>
+    <tr><td>POO</td><td><input type="number" id="interroPOO"></td><td><input type="number" id="examenPOO"></td><td><input type="number" id="tpPOO"></td><td>3</td><td id="moyPOO">-</td></tr>
+    <tr><td>THL</td><td><input type="number" id="interroTHL"></td><td><input type="number" id="examenTHL"></td><td></td><td>3</td><td id="moyTHL">-</td></tr>
+    <tr><td>Python</td><td></td><td><input type="number" id="examenPython"></td><td></td><td>2</td><td id="moyPython">-</td></tr>
+    <tr><td>ENG2</td><td></td><td><input type="number" id="examenENG2"></td><td></td><td>2</td><td id="moyENG2">-</td></tr>
+  </table>
+  <button onclick="calculateAverages(2)">Calculate AVRG S4</button>
+  <h3 id="finalResult2" class="result"></h3>
 
+  <script>
+    function calculateAverages(tableId) {
+      const subjects = tableId === 1
+        ? ["Algo", "Archi", "Si", "Mi", "Proba", "Logique", "ENG"]
+        : ["BDD", "Archi2", "SE", "POO", "THL", "Python", "ENG2"];
 
+      let totalWeighted = 0, totalUnits = 0;
 
+      subjects.forEach(subject => {
+        const interro = parseFloat(document.getElementById(`interro${subject}`)?.value || 0);
+        const examen = parseFloat(document.getElementById(`examen${subject}`)?.value || 0);
+        const tp = parseFloat(document.getElementById(`tp${subject}`)?.value || 0);
 
+        let moy;
+        if (tp) {
+          moy = (interro * 0.25 + examen * 0.5 + tp * 0.25).toFixed(2);
+        } else {
+          moy = interro
+            ? ((interro + examen * 2) / 3).toFixed(2)
+            : examen.toFixed(2);
+        }
 
+        document.getElementById(`moy${subject}`).innerText = moy;
+        localStorage.setItem(`moy${subject}`, moy);
 
+        const unitWeight = (subject.includes("ENG") || subject === "Python") ? 2 : 3;
+        totalWeighted += parseFloat(moy) * unitWeight;
+        totalUnits += unitWeight;
 
+        // Save inputs
+        if (document.getElementById(`interro${subject}`)) {
+          localStorage.setItem(`interro${subject}`, interro);
+        }
+        if (document.getElementById(`examen${subject}`)) {
+          localStorage.setItem(`examen${subject}`, examen);
+        }
+        if (document.getElementById(`tp${subject}`)) {
+          localStorage.setItem(`tp${subject}`, tp);
+        }
+      });
 
+      const finalAvg = (totalWeighted / totalUnits).toFixed(2);
+      const resultId = tableId === 1 ? "finalResult1" : "finalResult2";
+      document.getElementById(resultId).innerText = "Final Semester Average: " + finalAvg;
 
-
-      
-      <h3 style="color: red;"> S4: ( doesn't work currently ) </h3>
-
-      <!-- Second Table -->
-      <table id="gradesTable2">
-        <tr>
-          <th>Module</th>
-          <th>Interro</th>
-          <th>Examen</th>
-          <th>TP</th>
-          <th>Ceoff</th>
-          <th>MOY</th>
-        </tr>
-        <tr>
-          <td>BDD</td> 
-          <td><input type="number" id="interroBDD"></td>
-          <td><input type="number" id="examenBDD"></td>
-          <td><input type="number" id="tpBDD"></td>
-          <td id="ceoff3">3</td>
-          <td id="moyBDD">-</td>
-        </tr>
-        <tr>
-          <td>Archi2</td> 
-          <td><input type="number" id="interroArchi2"></td>
-          <td><input type="number" id="examenArchi2"></td>
-          <td><input type="number" id="tpArchi2"></td>
-          <td id="ceoff3">3</td>
-          <td id="moyArchi2">-</td>
-        </tr>
-        <tr>
-          <td>SE</td> 
-          <td><input type="number" id="interroSE"></td>
-          <td><input type="number" id="examenSE"></td>
-          <td><input type="number" id="tpSE"></td>
-          <td id="ceoff3">3</td>
-          <td id="moySE">-</td>
-        </tr>
-        <tr>
-          <td>POO</td> 
-          <td><input type="number" id="interroPOO"></td>
-          <td><input type="number" id="examenPOO"></td>
-          <td><input type="number" id="tpPOO"></td>
-          <td id="ceoff3">3</td>
-          <td id="moyPOO">-</td>
-        </tr>
-        <tr>
-          <td>THL</td> 
-          <td><input type="number" id="interroTHL"></td>
-          <td><input type="number" id="examenTHL"></td>
-          <td></td>
-          <td id="ceoff3">3</td>
-          <td id="moyTHL">-</td>
-        </tr>
-        <tr>
-          <td>Python</td> 
-          <td></td>
-          <td><input type="number" id="examenPython"></td>
-          <td></td>
-          <td id="ceoff2">2</td>
-          <td id="moyPython">-</td>
-        </tr>
-        <tr>
-          <td>ENG2</td>
-          <td></td>
-          <td><input type="number" id="examenENG2"></td>
-          <td></td>
-          <td id="ceoff2">2</td>
-          <td id="moyENG2">-</td>
-        </tr>
-      </table>
-    
-    
-      <!-- Calculate Button for Second Table -->
-
-      <button onclick="">Calculate AVRG S4 :</button>
-
-      <br><br>
-
-
-      <script>
-        function calculateAverages() {
-
-let subjects = [];
-let totalWeighted = 0, totalUnits = 0;
-
-/* if (tableId === 1) {
-    subjects = ["Algo", "Archi", "Si", "Mi", "Proba", "Logique", "ENG"];
-} else if (tableId === 2) {
-    subjects = ["BDD", "Archi2", "SE", "POO", "THL", "Python", "ENG2"];
-} */
-
-    subjects = ["Algo", "Archi", "Si", "Mi", "Proba", "Logique", "ENG"];
-
-subjects.forEach(subject => {
-    let interroElement = document.getElementById(`interro${subject}`);
-    let examenElement = document.getElementById(`examen${subject}`);
-    let tpElement = document.getElementById(`tp${subject}`);
-
-    console.log(`Checking elements for ${subject}:`, interroElement, examenElement, tpElement); // Debugging log
-
-    let interro = parseFloat(interroElement ? interroElement.value : 0) || 0;
-    let examen = parseFloat(examenElement ? examenElement.value : 0) || 0;
-    let tp = parseFloat(tpElement ? tpElement.value : 0) || 0;
-
-    console.log(`Subject: ${subject}, Interro: ${interro}, Examen: ${examen}, TP: ${tp}`);
-
-    let moy;
-    if (tp) {
-        moy = (interro * 0.25 + examen * 0.5 + tp * 0.25).toFixed(2);
-    } else { 
-      if(interro){
-        moy = ((interro + examen * 2) / 3).toFixed(2);
-      }else moy = examen.toFixed(2);       
+      localStorage.setItem(`finalAverage${tableId}`, finalAvg);
     }
-        
 
-
-
-    document.getElementById(`moy${subject}`).innerText = moy;
-
-    let unitWeight = subject === "ENG" ? 2 : 3;
-    totalWeighted += parseFloat(moy) * unitWeight;
-    totalUnits += unitWeight;
-});
-
-let finalAvg = (totalWeighted / totalUnits).toFixed(2);
-document.getElementById("finalResult").innerText = "Final Semester Average: " + finalAvg;
-}
-
-
-
-  
     function loadSavedValues() {
-let subjects = [
-    "Algo", "Archi", "Si", "Mi", "Proba", "Logique", "ENG",
-    "BDD", "Archi2", "SE", "POO", "THL", "Python", "ENG2"
-];
+      const subjects = [
+        "Algo", "Archi", "Si", "Mi", "Proba", "Logique", "ENG",
+        "BDD", "Archi2", "SE", "POO", "THL", "Python", "ENG2"
+      ];
 
-subjects.forEach(subject => {
-    let interroElement = document.getElementById(`interro${subject}`);
-    let examenElement = document.getElementById(`examen${subject}`);
-    let tpElement = document.getElementById(`tp${subject}`);
-    let moyElement = document.getElementById(`moy${subject}`);
+      subjects.forEach(subject => {
+        const interro = localStorage.getItem(`interro${subject}`);
+        const examen = localStorage.getItem(`examen${subject}`);
+        const tp = localStorage.getItem(`tp${subject}`);
+        const moy = localStorage.getItem(`moy${subject}`);
 
-    if (interroElement && localStorage.getItem(`interro${subject}`)) {
-        interroElement.value = localStorage.getItem(`interro${subject}`);
+        if (interro !== null) document.getElementById(`interro${subject}`)?.setAttribute('value', interro);
+        if (examen !== null) document.getElementById(`examen${subject}`)?.setAttribute('value', examen);
+        if (tp !== null) document.getElementById(`tp${subject}`)?.setAttribute('value', tp);
+        if (moy !== null) document.getElementById(`moy${subject}`).innerText = moy;
+      });
+
+      const avg1 = localStorage.getItem("finalAverage1");
+      if (avg1) document.getElementById("finalResult1").innerText = "Final Semester Average: " + avg1;
+
+      const avg2 = localStorage.getItem("finalAverage2");
+      if (avg2) document.getElementById("finalResult2").innerText = "Final Semester Average: " + avg2;
     }
-    if (examenElement && localStorage.getItem(`examen${subject}`)) {
-        examenElement.value = localStorage.getItem(`examen${subject}`);
-    }
-    if (tpElement && localStorage.getItem(`tp${subject}`)) {
-        tpElement.value = localStorage.getItem(`tp${subject}`);
-    }
-    if (moyElement && localStorage.getItem(`moy${subject}`)) {
-        moyElement.innerText = localStorage.getItem(`moy${subject}`);
-    }
-});
 
-let finalAvg = localStorage.getItem("finalAverage");
-if (finalAvg) { 
-  document.getElementById("finalResult").innerText = "Final Semester Average: " + finalAvg;
-}
-
-  
-    window.onload = loadSavedValues; 
-}
-      </script>
-      
-
-    
-    </body>
-    </html>
-    
+    window.onload = loadSavedValues;
+  </script>
+</body>
+</html>
