@@ -41,6 +41,8 @@
   <button onclick="calculateAverages(2)">Calculate AVRG S4</button>
   <h3 id="finalResult2" class="result"></h3>
 
+  <h3 id="finalResult" class="result" style="color: green;"></h3>
+
   <script>
     function calculateAverages(tableId) {
       const subjects = tableId === 1
@@ -49,16 +51,26 @@
 
       let totalWeighted = 0, totalUnits = 0;
 
-      subjects.forEach(subject => {
-        const interro = parseFloat(document.getElementById(`interro${subject}`)?.value || 0);
-        const examen = parseFloat(document.getElementById(`examen${subject}`)?.value || 0);
-        const tp = parseFloat(document.getElementById(`tp${subject}`)?.value || 0);
+      for (let subject of subjects) {
+        const interroInput = document.getElementById(`interro${subject}`);
+        const examenInput = document.getElementById(`examen${subject}`);
+        const tpInput = document.getElementById(`tp${subject}`);
+
+        const interro = parseFloat(interroInput?.value || 0);
+        const examen = parseFloat(examenInput?.value || 0);
+        const tp = parseFloat(tpInput?.value || 0);
+
+        // Validate input values
+        if (interro < 0 || examen < 0 || tp < 0) {
+          alert(`All marks for ${subject} must be greater than or equal to 0.`);
+          return;
+        }
 
         let moy;
-        if (tp) {
+        if (tpInput) {
           moy = (interro * 0.25 + examen * 0.5 + tp * 0.25).toFixed(2);
         } else {
-          moy = interro
+          moy = interroInput
             ? ((interro + examen * 2) / 3).toFixed(2)
             : examen.toFixed(2);
         }
@@ -71,22 +83,25 @@
         totalUnits += unitWeight;
 
         // Save inputs
-        if (document.getElementById(`interro${subject}`)) {
-          localStorage.setItem(`interro${subject}`, interro);
-        }
-        if (document.getElementById(`examen${subject}`)) {
-          localStorage.setItem(`examen${subject}`, examen);
-        }
-        if (document.getElementById(`tp${subject}`)) {
-          localStorage.setItem(`tp${subject}`, tp);
-        }
-      });
+        if (interroInput) localStorage.setItem(`interro${subject}`, interro);
+        if (examenInput) localStorage.setItem(`examen${subject}`, examen);
+        if (tpInput) localStorage.setItem(`tp${subject}`, tp);
+      }
 
       const finalAvg = (totalWeighted / totalUnits).toFixed(2);
       const resultId = tableId === 1 ? "finalResult1" : "finalResult2";
       document.getElementById(resultId).innerText = "Final Semester Average: " + finalAvg;
 
       localStorage.setItem(`finalAverage${tableId}`, finalAvg);
+
+      // Compute Annual Average if both exist
+      const avg1 = parseFloat(localStorage.getItem("finalAverage1") || 0);
+      const avg2 = parseFloat(localStorage.getItem("finalAverage2") || 0);
+      if (avg1 && avg2) {
+        const annual = ((avg1 + avg2) / 2).toFixed(2);
+        document.getElementById("finalResult").innerText = "Final Annual Average: " + annual;
+        localStorage.setItem("finalAverage", annual);
+      }
     }
 
     function loadSavedValues() {
@@ -112,6 +127,12 @@
 
       const avg2 = localStorage.getItem("finalAverage2");
       if (avg2) document.getElementById("finalResult2").innerText = "Final Semester Average: " + avg2;
+
+      if (avg1 && avg2) {
+        const annual = ((parseFloat(avg1) + parseFloat(avg2)) / 2).toFixed(2);
+        document.getElementById("finalResult").innerText = "Final Annual Average: " + annual;
+        localStorage.setItem("finalAverage", annual);
+      }
     }
 
     window.onload = loadSavedValues;
